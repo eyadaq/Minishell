@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: malrifai <malrifai@student.42.fr>          +#+  +:+       +#+         #
+#    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 10:28:41 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/05/05 14:38:05 by malrifai         ###   ########.fr        #
+#    Updated: 2025/05/07 00:37:49 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,8 @@ TOKENIZING	= tokenizing/tokenizer.c \
 			  tokenizing/cmd_utils.c \
 			  tokenizing/free.c\
 			  tokenizing/parsing_utils.c \
-			  tokenizing/normalize_tokens.c
+			  tokenizing/normalize_tokens.c \
+			  tokenizing/parsing_cmd.c
 
 SRCS		= main.c \
 			  $(TOKENIZING) \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malrifai <malrifai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 10:13:43 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/05/05 18:44:08 by malrifai         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:37:28 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,7 @@ int					handle_words(int *i, char *input, t_token **head);
 void				check_separator(int *i, char *input);
 void				add_token(t_token **head, char *value, t_token_type type);
 
+
 //tokenizing/cmd_utils.c
 t_ast				*new_ast_cmd(void);
 void				add_argument(t_ast *node, char *arg);
@@ -215,8 +216,10 @@ void				ft_free(t_minishell *data, int flag, char *msg);
 void				free_ast(t_ast *node);
 void				close_heredocs(t_ast *node);
 
-//tokenizing/parsing_utils.c
+//tokenizing/parsing_cmd.c
 t_ast				*parse_command(t_token **tokens);
+
+//tokenizing/parsing_utils.c
 t_ast				*parse_group(t_token **tokens);
 t_ast				*parse_pipeline(t_token **tokens);
 t_ast				*parse_and(t_token **tokens);
