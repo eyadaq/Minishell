@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:34:58 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/05/07 00:40:00 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:36:45 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	process_redirections_before(t_token **tokens,
 	t_token *redir_tokens[128], int *redir_count)
 {
 	while (*tokens && ((*tokens)->type == REDIR_IN
-		|| (*tokens)->type == REDIR_OUT || (*tokens)->type == APPEND
-		|| (*tokens)->type == HEREDOC))
+			|| (*tokens)->type == REDIR_OUT || (*tokens)->type == APPEND
+			|| (*tokens)->type == HEREDOC))
 	{
 		redir_tokens[*redir_count] = *tokens;
 		(*redir_count)++;

@@ -6,7 +6,7 @@
 #    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 10:28:41 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/05/07 00:37:49 by eaqrabaw         ###   ########.fr        #
+#    Updated: 2025/05/07 10:31:23 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,12 @@ RED    		= \033[0;31m
 RESET   	= \033[0m
 ARROW   	= ✔
 
+PARSING 	= parsing/parsing_utils.c \
+			  parsing/parsing_cmd.c \
+			  parsing/parse.c \
+			  parsing/cmd_utils.c \
+			  parsing/init_nodes.c
+			  
 EXEC		= exec/exec_and_or.c \
 			  exec/pipeline_command.c \
 			  exec/pipeline_fork.c \
@@ -71,15 +77,11 @@ SYNTAX		= syntax/syntax_check.c \
 			  syntax/syntax_utils.c
 
 TOKENIZING	= tokenizing/tokenizer.c \
-			  tokenizing/init_nodes.c \
 			  tokenizing/normalize_helpers.c \
 			  tokenizing/check.c \
 			  tokenizing/tokenizer_utils.c \
-			  tokenizing/cmd_utils.c \
-			  tokenizing/free.c\
-			  tokenizing/parsing_utils.c \
-			  tokenizing/normalize_tokens.c \
-			  tokenizing/parsing_cmd.c
+			  tokenizing/free.c \
+			  tokenizing/normalize_tokens.c
 
 SRCS		= main.c \
 			  $(TOKENIZING) \
@@ -89,6 +91,7 @@ SRCS		= main.c \
 			  $(HERDOC) \
 			  $(EXEC) \
 			  $(READ) \
+			  $(PARSING) \
 			  $(SYNTAX)
 
 OBJS		= $(SRCS:%.c=$(objDir)/%.o)

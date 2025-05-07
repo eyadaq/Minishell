@@ -6,16 +6,11 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:07:09 by malrifai          #+#    #+#             */
-/*   Updated: 2025/05/04 01:20:32 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:20:55 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-t_ast	*parse_ast(t_token **tokens)
-{
-	return (parse_expression(tokens));
-}
 
 t_ast	*new_ast_cmd(void)
 {

@@ -6,14 +6,11 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 22:24:10 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/05/07 00:34:16 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:21:37 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-
-
 
 t_ast	*parse_pipeline(t_token **tokens)
 {

@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 10:13:43 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/05/07 00:37:28 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:35:38 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,11 +203,12 @@ int					handle_words(int *i, char *input, t_token **head);
 void				check_separator(int *i, char *input);
 void				add_token(t_token **head, char *value, t_token_type type);
 
-
-//tokenizing/cmd_utils.c
+//parsing/cmd_utils.c
 t_ast				*new_ast_cmd(void);
 void				add_argument(t_ast *node, char *arg);
 t_ast				*handle_redirection(t_ast *node, t_token *token);
+
+//parsing/parse.c
 t_ast				*parse_ast(t_token **tokens);
 
 //tokenizing/free.c
@@ -216,7 +217,7 @@ void				ft_free(t_minishell *data, int flag, char *msg);
 void				free_ast(t_ast *node);
 void				close_heredocs(t_ast *node);
 
-//tokenizing/parsing_cmd.c
+//parsing/parsing_cmd.c
 t_ast				*parse_command(t_token **tokens);
 
 //tokenizing/parsing_utils.c
@@ -361,9 +362,11 @@ int					is_redirection(t_token *token);
 int					is_pipe_or_logical(t_token *token);
 void				expand_one_token(t_token *tok,
 						int last_exit_status, t_env *env);
+//parse/init_node.c
 t_ast				*new_pipe_node(t_ast *left, t_ast *right);
 t_ast				*create_redir_node(t_ast *cmd_node, t_token *token);
 void				expand_wildcards(t_token *tokens);
 void				ft_process_input(t_minishell *data, char *input);
 void				free_tokens_from_list(t_token *token);
+
 #endif
