@@ -1,40 +1,130 @@
-# Minishell
+# 🐚 Minishell
 
-This project is a simplified shell created as part of the 42 curriculum. The objective is to build a functional shell that mimics the behavior of a real Unix shell with built-in commands, pipelines, redirections, and environment handling.
+## 📌 Table of Contents
+- [Introduction](#introduction)
+- [Project Objectives](#project-objectives)
+- [Mandatory Features](#mandatory-features)
+- [Bonus Features](#bonus-features)
+- [Compilation](#compilation)
+- [Execution](#execution)
+- [Project Structure](#project-structure)
+- [Implementation Overview](#implementation-overview)
+- [Resources](#resources)
 
-## 🛠️ Features
+---
 
-- Prompt display and user input parsing
-- Built-in commands:
-  - `echo`
-  - `cd`
-  - `pwd`
-  - `export`
-  - `unset`
-  - `env`
-  - `exit`
-- Environment variable management
-- Command execution using `PATH`
-- Pipes (`|`)
-- Input (`<`), output (`>`) and append (`>>`) redirections
-- Heredoc (`<<`)
-- Signal handling (e.g. `Ctrl+C`, `Ctrl+\`, `Ctrl+D`)
-- Error handling for invalid commands and syntax
+## 🧩 Introduction
 
-## 🧠 How It Works
+**Minishell** is a 42 school project where you build your own simple shell from scratch using C. The goal is to replicate basic behavior of Bash with your own parser, executor, and environment handling, including job control and signal handling in the bonus part.
 
-The shell reads user input, parses it into tokens (considering quotes and special characters), builds a syntax tree or execution plan, and then executes the command(s), handling redirections and pipes when needed.
+---
 
-## 🔧 Requirements
+## 🎯 Project Objectives
 
-- Linux environment (preferably Ubuntu)
-- C compiler (tested with `gcc`)
-- `make`
+- Understand how shells work internally.
+- Learn about process creation and management (`fork`, `exec`, `wait`).
+- Parse and interpret command lines.
+- Handle Unix signals.
+- Manage environment variables.
+- Implement pipelines, redirections, and logical operators.
 
-## 🧪 Usage
+---
 
-Clone the repository and run:
+## ✅ Mandatory Features
+
+- Display a prompt and wait for user input.
+- Read and parse command lines.
+- Execute:
+  - Executables in `PATH`.
+  - Built-in commands: `echo`, `cd`, `pwd`, `export`, `unset`, `env`, `exit`.
+- Support:
+  - Pipes (`|`)
+  - Redirections (`<`, `>`, `>>`)
+  - Environment variables (`$VAR`)
+  - Quoting (`'`, `"`)
+  - `$?` (last return value)
+- Proper error handling and exit codes.
+- Signal handling for `SIGINT` and `SIGQUIT`.
+
+---
+
+## 🌟 Bonus Features
+
+- Support logical operators: `&&` and `||`.
+- Parentheses for command grouping.
+- Wildcard expansion (e.g., `*`).
+- Here-document (`<<`) with variable expansion.
+- Advanced signal handling (interactive mode, job control).
+- Support for command history (if desired).
+- Code norm-compliant and modular design.
+
+---
+
+## 🛠 Compilation
+
+To compile the project, run:
 
 ```bash
 make
+````
+
+To remove object files:
+
+```bash
+make clean
+```
+
+To remove everything including the executable:
+
+```bash
+make fclean
+```
+
+To recompile from scratch:
+
+```bash
+make re
+```
+
+The shell executable is named `minishell`.
+
+---
+
+## 🚀 Execution
+
+Launch the shell by running:
+
+```bash
 ./minishell
+```
+
+From there, you can interact using standard shell syntax. Try:
+
+```bash
+echo hello world
+ls -la | grep minishell > out.txt
+```
+
+Use `Ctrl+C` to interrupt commands and `exit` to close the shell.
+
+---
+
+## 🧠 Implementation Overview
+
+* **Lexer**: Tokenizes input based on quotes, pipes, and redirections.
+* **Parser**: Builds an abstract syntax tree or command structure.
+* **Executor**: Handles built-ins, forks child processes for other commands.
+* **Redirections**: Implemented using `dup2()`.
+* **Environment**: Managed using a custom key-value structure.
+* **Signals**: Customized handling for interactive behavior.
+* **Here-doc**: Reads input until a delimiter is met and pipes it to command input.
+
+---
+
+## 📚 Resources
+
+* `man bash`, `man fork`, `man execve`, `man dup2`, `man signal`, `man waitpid`
+* [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
+* 42 Forum and peer review
+
+---
