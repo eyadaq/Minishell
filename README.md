@@ -125,3 +125,4 @@ Use `Ctrl+C` to interrupt commands and `exit` to close the shell.
 * 42 Forum and peer review
 
 ---
+🛠 Built with love and frustration as part of the 42 Network curriculum.
