@@ -45,7 +45,9 @@
   - `$?` (last return value)
 - Proper error handling and exit codes.
 - Signal handling for `SIGINT` and `SIGQUIT`.
-
+- Support for command history.
+- Code norm-compliant and modular design.
+- Here-document (`<<`) with variable expansion.
 ---
 
 ## 🌟 Bonus Features
@@ -53,11 +55,6 @@
 - Support logical operators: `&&` and `||`.
 - Parentheses for command grouping.
 - Wildcard expansion (e.g., `*`).
-- Here-document (`<<`) with variable expansion.
-- Advanced signal handling (interactive mode, job control).
-- Support for command history (if desired).
-- Code norm-compliant and modular design.
-
 ---
 
 ## 🛠 Compilation
