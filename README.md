@@ -15,7 +15,7 @@
 
 ## 🧩 Introduction
 
-**Minishell** is a 42 school project where you build your own simple shell from scratch using C. The goal is to replicate basic behavior of Bash with your own parser, executor, and environment handling, including job control and signal handling in the bonus part.
+**Minishell** is a 42 school project where you build your own simple shell from scratch using C. The goal is to replicate basic behavior of Bash with your own parser, executor, and environment handling, including job control and signal handling.
 
 ---
 
